@@ -7,9 +7,7 @@
   <artifactId>springframework-data-accecss</artifactId>
   <version>0.0.1-SNAPSHOT</version>
  </parent>
- <groupId>com.ymmihw.springframework</groupId>
  <artifactId>spring-jdbc</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
  <name>spring-jdbc</name>
  <url>http://maven.apache.org</url>

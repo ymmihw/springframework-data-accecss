@@ -3,26 +3,20 @@
  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
  <modelVersion>4.0.0</modelVersion>
  <parent>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-starter-parent</artifactId>
-  <version>2.2.1.RELEASE</version>
-  <relativePath />
+  <groupId>com.ymmihw.springframework</groupId>
+  <artifactId>springframework-data-accecss</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
  </parent>
- <groupId>com.ymmihw.springframework</groupId>
- <artifactId>springframework-data-accecss</artifactId>
- <version>0.0.1-SNAPSHOT</version>
+ <artifactId>spring-orm</artifactId>
+ <name>spring-orm</name>
  <packaging>pom</packaging>
-
- <name>springframework-data-accecss</name>
  <url>http://maven.apache.org</url>
-
  <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
  </properties>
-
- <dependencies></dependencies>
+ <dependencies>
+ </dependencies>
  <modules>
-  <module>spring-orm</module>
-  <module>spring-jdbc</module>
+  <module>spring-orm-osiv</module>
  </modules>
 </project>
