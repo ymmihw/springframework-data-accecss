@@ -1,17 +1,16 @@
 package com.ymmihw.springframework.jdbc;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import javax.sql.DataSource;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
+@SpringBootTest
 @ContextConfiguration(classes = DataSourceRoutingTestConfiguration.class)
 @DirtiesContext
 public class DataSourceRoutingIntegrationTest {
@@ -22,7 +21,7 @@ public class DataSourceRoutingIntegrationTest {
   @Autowired
   ClientService clientService;
 
-  @Before
+  @BeforeEach
   public void setup() {
     final String SQL_CLIENT_A = "insert into client (id, name) values (1, 'CLIENT A')";
     final String SQL_CLIENT_B = "insert into client (id, name) values (2, 'CLIENT B')";

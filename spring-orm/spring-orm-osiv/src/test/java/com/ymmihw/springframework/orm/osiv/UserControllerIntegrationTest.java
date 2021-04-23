@@ -6,15 +6,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import java.util.Arrays;
 import java.util.HashSet;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import com.ymmihw.springframework.orm.osiv.model.BasicUser;
 import com.ymmihw.springframework.orm.osiv.repository.UserRepository;
@@ -22,7 +20,6 @@ import com.ymmihw.springframework.orm.osiv.repository.UserRepository;
 @SpringBootTest
 @AutoConfigureMockMvc
 @ContextConfiguration(classes = Application.class)
-@RunWith(SpringJUnit4ClassRunner.class)
 public class UserControllerIntegrationTest {
 
   @Autowired
@@ -31,7 +28,7 @@ public class UserControllerIntegrationTest {
   @Autowired
   private MockMvc mockMvc;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     BasicUser user = new BasicUser();
     user.setUsername("root");
@@ -47,7 +44,7 @@ public class UserControllerIntegrationTest {
         .andExpect(jsonPath("$.permissions", containsInAnyOrder("PERM_READ", "PERM_WRITE")));
   }
 
-  @After
+  @AfterEach
   public void flushDb() {
     userRepository.deleteAll();
   }
